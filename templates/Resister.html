@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href={{url_for("static",filename="CSS/login.css")}}>
+{% endblock  %}
+
+{% block content %}
+<div id="login">
+    <form name='form-login' method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            <span class="fontawesome-user"></span>
+            {{render_field(form.username, class_="form-control headbox", id="user", placeholder="従業員コード")}}
+        </div>
+        <div>
+            <span class="fontawesome-user"></span>
+            {{render_field(form.email, class_="form-control headbox", id="email", placeholder="メールアドレス")}}
+        </div>
+        <div>
+            <span class="fontawesome-lock"></span>
+            {{render_field(form.password, class_="form-control headbox", id="password", placeholder="パスワード")}}
+        </div>
+        <div>
+            <span class="fontawesome-lock"></span>
+            {{render_field(form.pass_confirm, class_="form-control headbox", id="password-confirm", placeholder="パスワード(確認)")}}
+        </div>
+        <div>
+            {{form.submit(class_="form-control", id="submit", placeholder="登 録")}}
+        </div>
+    </form>
+</div>
+{% endblock  %}

@@ -1,0 +1,10 @@
+/* main */
+.content {
+    background-image: url('../Images/backgroundImg.jpg');
+    background-repeat: no-repeat;    
+    background-size: cover;          
+    background-position: center;     
+    background-attachment: fixed;    
+    margin: 0;                       
+    height: calc(100vh - 80px - 64px);  
+}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href={{url_for("static",filename="CSS/main.css")}}>
+{% endblock  %}
+
+{% block content %}
+<main class="content">
+    <section id="left-main">
+        <div class="main-container">
+            <div id="nav-contaier">
+                <h2 class="pdd">抽出したい情報</h2>
+            </div>
+            <p class="pdd">情報種類</p>
+            <div id="select-container">
+                <select name="options" id="select-box">
+                    <option value="option1">寒冷地問題を抽出</option>
+                </select>
+            </div>
+            <p class="nav-text-c pdd">抽出期間</p>
+            <div class="date-range-container pdd">
+                <input type="date" id="start-date" name="start-date">
+                <span class="date-to">～</span>
+                <input type="date" id="end-date" name="end-date">
+            </div>
+            <br/>
+            <div id="nav-contaier">
+                <h2 class="pdd">ダッシュボードで分析</h2>
+            </div>
+            <div class="pdd">
+                <button id="dash-btn">
+                    <a href="{{url_for("analysis")}}" class="dash-link">
+                        分析ダッシュボードへ
+                    </a>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="right-main" class="main-container">
+
+    </section>
+</main>
+{% endblock  %}
