@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+{% from "_formhelpers.html" import render_field %}
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{url_for("static", filename="CSS/base.css")}}>
+    {% block styles %}{% endblock  %}
+    <title>ICs:</title>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <a href={{url_for("index")}}>
+                <img class="logoImg" src={{url_for("static", filename="Images/logo1_big.png")}} alt="">
+            </a>
+        </div>
+        <nav class="navgation">
+            <ul class="navgation-ul">
+                <li class="navgation-item">
+                    <a href={{url_for("main")}}>情報抽出</a>
+                </li>
+                <li class="navgation-item">
+                    <a href={{url_for("analysis")}}>情報分析</a>
+                </li>
+                <div class="warp-border"></div>
+                <li class="navgation-item">
+                    <a href={{url_for("inquiry")}}>問い合わせ</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class="flashes">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+    {% block content %}{% endblock  %}
+    <footer>
+        <div></div>
+    </footer>
+</body>
+</html>

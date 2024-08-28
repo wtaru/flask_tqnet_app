@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href={{url_for("static",filename="CSS/main.css")}}>
+{% endblock  %}
+
+{% block content %}
+<main class="content">
+    <section id="left-main">
+        <div class="main-container">
+            <div class="nav-contaier">
+                <h2 class="pdd">抽出したい情報</h2>
+            </div>
+            <p class="pdd">情報種類</p>
+            <div id="select-container">
+                <select name="options" id="select-box">
+                    <option value="option1">寒冷地問題を抽出</option>
+                </select>
+            </div>
+            <p class="pdd">抽出期間</p>
+            <div class="date-range-container pdd">
+                <input type="date" id="start-date" name="start-date">
+                <span class="date-to">～</span>
+                <input type="date" id="end-date" name="end-date">
+            </div>
+            <br/>
+            <div class="pdd">
+                <button type="submit" class="click-btn">
+                    抽出実施
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="right-main" class="main-container">
+        <div class="main-item">左から情報を入力してください</div>
+    </section>
+</main>
+{% endblock  %}
